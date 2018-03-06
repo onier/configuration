@@ -9,21 +9,11 @@
 #
 # Tasks for role analytics_api
 #
-# Overview: This role's tasks come from edx_django_service.
+# Overview: Most of this role's tasks come from edx_django_service.
 #
 #
 # Dependencies:
 #
-
-- name: run collectstatic
-  shell: "{{ analytics_api_home }}/venvs/{{ analytics_api_service_name }}/bin/python manage.py collectstatic  --noinput"
-  args:
-    chdir: "{{ analytics_api_code_dir }}"
-  become_user: "{{ analytics_api_user }}"
-  environment: "{{ analytics_api_environment }}"
-  tags:
-    - assets
-    - assets:gather
 
 - name: create api users
   shell: "{{ analytics_api_home }}/venvs/{{ analytics_api_service_name }}/bin/python manage.py set_api_key {{ item.key }} {{ item.value }}"
