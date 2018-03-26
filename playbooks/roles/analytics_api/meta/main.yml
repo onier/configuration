@@ -26,6 +26,11 @@ dependencies:
     edx_django_service_user: '{{ analytics_api_user }}'
     edx_django_service_home: '{{ COMMON_APP_DIR }}/{{ analytics_api_service_name }}'
     edx_django_service_config_overrides: '{{ analytics_api_service_config_overrides }}'
+    edx_django_service_default_db_host: '{{ ANALYTICS_API_DEFAULT_HOST }}'
+    edx_django_service_default_db_name: '{{ ANALYTICS_API_DEFAULT_DB_NAME }}'
+    edx_django_service_default_db_atomic_requests: false
+    edx_django_service_db_user: '{{ ANALYTICS_API_DEFAULT_USER }}'
+    edx_django_service_db_password: '{{ ANALYTICS_API_DEFAULT_PASSWORD }}'
     edx_django_service_debian_pkgs_extra: '{{ analytics_api_debian_pkgs }}'
     edx_django_service_gunicorn_port: '{{ analytics_api_gunicorn_port }}'
     edx_django_service_django_settings_module: '{{ ANALYTICS_API_DJANGO_SETTINGS_MODULE }}'
