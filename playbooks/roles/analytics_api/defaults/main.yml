@@ -39,6 +39,9 @@ analytics_api_debian_pkgs:
 
 ANALYTICS_API_VERSION: "gbabey/enterprise-data-api"
 
+ANALYTICS_API_NGINX_PORT: '1{{ analytics_api_gunicorn_port }}'
+ANALYTICS_API_SSL_NGINX_PORT: '4{{ analytics_api_gunicorn_port }}'
+
 ANALYTICS_API_REPOS:
   - PROTOCOL: "{{ COMMON_GIT_PROTOCOL }}"
     DOMAIN: "{{ COMMON_GIT_MIRROR }}"
@@ -141,6 +144,8 @@ analytics_api_service_config_overrides:
 
   STATICFILES_DIRS: ['static']
   STATIC_ROOT: "{{ COMMON_DATA_DIR }}/{{ analytics_api_service_name }}/staticfiles"
+
+  LMS_BASE_URL: '{{ ANALYTICS_API_LMS_BASE_URL }}'
 
   # db config
   DATABASES: '{{ ANALYTICS_API_DATABASES }}'
