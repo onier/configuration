@@ -29,6 +29,8 @@ analytics_api_home: "{{ COMMON_APP_DIR }}/{{ analytics_api_service_name }}"
 analytics_api_user: "{{ analytics_api_service_name }}"
 analytics_api_code_dir: "{{ analytics_api_home }}/{{ analytics_api_service_name }}"
 
+analytics_api_wsgi_name: "analyticsdataserver"
+
 #
 # OS packages
 #
