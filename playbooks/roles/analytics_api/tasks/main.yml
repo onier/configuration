@@ -15,16 +15,12 @@
 # Dependencies:
 #
 
-- debug:
-    msg: "Creating API users with: {{ edx_django_service_environment }}"
-
-
 - name: create api users
   shell: "{{ analytics_api_home }}/venvs/{{ analytics_api_service_name }}/bin/python manage.py set_api_key {{ item.key }} {{ item.value }}"
   args:
     chdir: "{{ analytics_api_code_dir }}"
   become_user: "{{ analytics_api_user }}"
-  environment: "{{ edx_django_service_environment }}"
+  environment: "{{ analytics_api_environment }}"
   with_dict: "{{ ANALYTICS_API_USERS }}"
   tags:
     - manage
