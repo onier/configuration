@@ -104,10 +104,6 @@
     - devstack
     - devstack:install
 
-- debug:
-    msg: "Migrating database with environment: {{ edx_django_service_migration_environment }}"
-
-
 - name: migrate database
   command: make migrate
   args:
